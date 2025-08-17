@@ -112,7 +112,7 @@ For each language directory:
 ## File Structure
 
 ```
-nvim-tests/
+vim-config-validation/
 ├── README.md              # This file
 ├── csharp/
 │   ├── Program.cs          # C# test application
