@@ -13,32 +13,32 @@ When deploying your Neovim configuration to a new machine, these test projects h
 
 ## Supported Languages
 
-### 🔷 C# (`csharp/`)
+### 🔷 C# (`src/csharp/`)
 - **LSP**: omnisharp for IntelliSense features
 - **Debugging**: netcoredbg with automatic project building
 - **Formatting**: csharpier
 - **Test**: Console application with classes, interfaces, async operations
 
-### 🐍 Python (`python/`)
+### 🐍 Python (`src/python/`)
 - **LSP**: pyright for type checking and navigation
 - **Debugging**: debugpy for breakpoint debugging  
 - **Formatting**: black + isort (imports)
 - **Test**: Script with classes, async functions, type hints
 
-### 🐹 Go (`go/`)
+### 🐹 Go (`src/go/`)
 - **LSP**: gopls for Go language support
 - **Debugging**: delve (dlv) debugger
 - **Formatting**: Built-in gofmt (automatic)
 - **Test**: Program with structs, interfaces, error handling
 
-### 📘 TypeScript (`typescript/`)
+### 📘 TypeScript (`src/typescript/`)
 - **LSP**: ts_ls (typescript-language-server)
 - **Debugging**: No debugging (focus on development features)
 - **Formatting**: prettier
 - **Linting**: eslint_d
 - **Test**: Classes, interfaces, async operations, imports
 
-### 🐚 Bash (`bash/`)
+### 🐚 Bash (`src/bash/`)
 - **LSP**: bash-language-server for completions
 - **Debugging**: No debugging (tracing with `set -x`)
 - **Formatting**: shfmt
@@ -48,7 +48,7 @@ When deploying your Neovim configuration to a new machine, these test projects h
 ## Quick Start
 
 1. **Copy your Neovim config** to the new machine
-2. **Open a test project**: `nvim nvim-tests/[language]/`
+2. **Open a test project**: `nvim nvim-config-validation/src/[language]/`
 3. **Wait for Mason** to auto-install language tools
 4. **Run the tests** described in each language's README
 
@@ -112,29 +112,33 @@ For each language directory:
 ## File Structure
 
 ```
-nvim-tests/
+nvim-config-validation/
 ├── README.md              # This file
-├── csharp/
-│   ├── Program.cs          # C# test application
-│   ├── TestApp.csproj      # Project file
-│   └── README.md           # C#-specific instructions
-├── python/
-│   ├── main.py             # Python test script
-│   └── README.md           # Python-specific instructions  
-├── go/
-│   ├── main.go             # Go test program
-│   ├── go.mod              # Go module file
-│   └── README.md           # Go-specific instructions
-├── typescript/
-│   ├── src/index.ts        # TypeScript test code
-│   ├── package.json        # Node.js dependencies
-│   ├── tsconfig.json       # TypeScript config
-│   ├── .eslintrc.json      # ESLint config
-│   ├── .prettierrc         # Prettier config
-│   └── README.md           # TypeScript-specific instructions
-└── bash/
-    ├── test_script.sh      # Bash test script
-    └── README.md           # Bash-specific instructions
+├── src/
+│   ├── csharp/
+│   │   ├── Program.cs          # C# test application
+│   │   ├── TestApp.csproj      # Project file
+│   │   └── README.md           # C#-specific instructions
+│   ├── python/
+│   │   ├── main.py             # Python test script
+│   │   └── README.md           # Python-specific instructions  
+│   ├── go/
+│   │   ├── main.go             # Go test program
+│   │   ├── go.mod              # Go module file
+│   │   ├── go.sum              # Go dependencies
+│   │   └── README.md           # Go-specific instructions
+│   ├── typescript/
+│   │   ├── src/index.ts        # TypeScript test code
+│   │   ├── package.json        # Node.js dependencies
+│   │   ├── tsconfig.json       # TypeScript config
+│   │   ├── .eslintrc.json      # ESLint config
+│   │   ├── .prettierrc         # Prettier config
+│   │   └── README.md           # TypeScript-specific instructions
+│   └── bash/
+│       ├── test_script.sh      # Bash test script
+│       └── README.md           # Bash-specific instructions
+├── LICENSE
+└── .gitignore
 ```
 
 ## Integration with Your Config
